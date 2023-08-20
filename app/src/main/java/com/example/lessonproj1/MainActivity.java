@@ -137,25 +137,29 @@ public class MainActivity extends AppCompatActivity {
 
             switch (operators) {
                 case "/":
-                    result /= newNumber;
+                    result = Double.parseDouble(oldNumber) / newNumber;
                     break;
                 case "*":
-                    result *= newNumber;
+                    result = Double.parseDouble(oldNumber) * newNumber;
                     break;
                 case "-":
-                    result -= newNumber;
+                    result = Double.parseDouble(oldNumber) - newNumber;
                     break;
                 case "+":
-                    result += newNumber;
+                    result = Double.parseDouble(oldNumber) + newNumber;
                     break;
                 case "X²":
-                    result = result * result;
+                    Double number = 1.0;
+                    for (int i = 1; i <= newNumber; i++) {
+                        number *= Double.parseDouble(oldNumber);
+                    }
+                    result = number;
                     break;
                 case "√":
                     result = Math.sqrt(result);
                     break;
                 case "%":
-                    result %= newNumber;
+                    result = Double.parseDouble(oldNumber) % newNumber;
                     break;
             }
 
