@@ -9,7 +9,7 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
     Button numberButtons[];
-    Button divide, multiply, minus, plus, equals, sqrt, square, percentage;
+    Button divide, multiply, minus, plus, equals, sqrt, square, percentage, dot;
     Double result = 0.0;
     String symbolsText[];
     EditText inputNumbers;
@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         sqrt = findViewById(R.id.symbol5);
         square = findViewById(R.id.symbol8);
         percentage = findViewById(R.id.symbol10);
+        dot = findViewById(R.id.symbol9);
 
         divide.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,7 +102,12 @@ public class MainActivity extends AppCompatActivity {
                 setOperator("%");
             }
         });
-
+        dot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setOperator(".");
+            }
+        });
         equals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
